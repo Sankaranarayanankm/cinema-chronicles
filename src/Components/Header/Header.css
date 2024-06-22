@@ -5,12 +5,20 @@
   padding: 20px;
   align-items: center;
   background-color: black;
+  overflow-x: scroll;
+  scrollbar-width: none; /* for hiding scroll bar in firefox */
+  -ms-overflow-style: none; /*for hiding scroll bar in explorer*/
+}
+/* this is how we hide scrollbar in chrome ,safari  */
+.header::-webkit-scrollbar {
+  display: none;
 }
 .header__icons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .header__icon > .MuiSvgIcon-root {
   font-size: 30px;
   margin-left: auto;
