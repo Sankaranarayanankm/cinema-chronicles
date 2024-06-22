@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background-color: black;
+}
+.header__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__icon > .MuiSvgIcon-root {
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* another way of centering something is by usign margin-left and margin-right to auto so it will automatically get centered  */
+.header__icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}
+
+.header__icon--active > p {
+  display: block !important;
+}
+
+.header__icon > p {
+  text-transform: uppercase; /* to make it to uppercase */
+  letter-spacing: 3px; /* add space between letters */
+  margin-right: auto;
+  margin-left: auto;
+  font-size: small;
+  display: none;
+}
+.header__icon:hover > p {
+  display: inline;
+}
+
+.header > h1 {
+  color: white;
+}
