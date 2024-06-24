@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Nav from "./Components/Navigation/Nav";
+import Results from "./Components/Results/Results";
+import request from "./Http/request";
 
-const apiKey = "ae930f685d40e272391440a9ebaad7d2";
 const App = () => {
+  const [selectedOption, setSelectedOption] = useState(request.fetchTrending);
+  console.log(selectedOption)
   return (
     <div className="app">
-      {/* Header component  */}
       <Header />
-      {/* Navigation component  */}
-      <Nav />
-      {/* results component  */}
+      <Nav setSelectedOption={setSelectedOption} />
+      <Results selectedOption={selectedOption} />
     </div>
   );
 };
