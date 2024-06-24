@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+**Learning from building Cinema Chronicles**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+to make letters to uppercase using css use text-transform:uppercase;
+to add space between letters use letter-spacing:3px like that 
+to increase line height use line-height:3px; 
 
-## Available Scripts
+to center a element we can give margin-right:auto and margin-left:auto
 
-In the project directory, you can run:
+NOTE:
 
-### `npm start`
+when we hover over a parent then we need make one of its child visible for that what we can do is add display none to the child first 
+then add this 
+.parentElement:hover > childElement{
+display:inline;
+}
+what does is what we hover over the parentElement target the child element and then give display property 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+BEM=> block element Modifier
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+examples of modifiers are active class ....
+how we name modifiers is that after the regular name we add two hyphens(--) for that 
+e.g. header__icon--active
 
-### `npm test`
+**hide scrollbar**
+to hide the scrollbar that we get by using overflow-x:scroll (in the header class)
+what we can do is 
+for chrome and safari browser 
+.header::-webkit-scrollbar{
+display:none;
+}
+and for firebox what we can do is inside the header css add scrollbar-width:none 
+and for internet explorer inside the -ms-overflow-style:none
+NOTE we need to add all 3 while developing because our users can use any of the browsers
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**while adding image**
+always add object-fit contain when we are adding images inside the div
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**how to get responsiveness to result page**
+add these classes to the main div of the result page 
+.results{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**HOW TO CREATE INSTANCE OF AXIOS**
+in the axios.js file which we created 
 
-### `npm run eject`
+const instance=axios.create({
+baseURL:'add the baseURL of website here'
+{)
+export default instance
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ERROR 204 MEANS => your request is correct but there is no data to send back
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+for adding images we need to find the base url and then append the it before the image url that we get from each movie object
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**HOW TO TRUNCATE(ADDING ... IF THE PARA OR LINE IS TOO LONG)1**
+install =>npm install react-text-truncate
+then import TextTruncate from 'reat-text-truncate'
+then render TextTruncate like this 
+<TextTruncate line={1} element='p' truncateTex='...' text={movie.overview} />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+to add the read more functionality add textTruncateChild property 
+it takes an a tag.
+ie textTruncateChild={<a href='#'>Read n</a>}
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**ADDING ANIMATION TO RERENDERING LISTS**
+for that we use REACT FLIP MOVE
