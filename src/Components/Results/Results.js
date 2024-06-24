@@ -14,11 +14,13 @@ const Results = ({ selectedOption }) => {
     fetchData();
   }, [selectedOption]);
   return (
-    <FlipMove className="results">
-      {movies.map((movie) => (
-        <VideoCard key={movie.id} movie={movie} />
-      ))}
-    </FlipMove>
+    <div className="results">
+      <FlipMove>
+        {movies.map((movie) => (
+          <VideoCard key={movie.id} movie={movie} />
+        ))}
+      </FlipMove>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import "./VideoCard.css";
 import TextTruncate from "react-text-truncate";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 const baseURL = "https://image.tmdb.org/t/p/original/";
+
 const VideoCard = forwardRef(({ movie }, ref) => {
   return (
     <div ref={ref} className="videoCard">
